@@ -34,8 +34,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "mkdir -p workspace"
-          command: "touch workspace/file.txt"
+          command: "mkdir -p workspace && touch workspace/file.txt"
       - persist_to_workspace:
           root: workspace
           paths:
