@@ -32,7 +32,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, America!"
+          command: "exit 255"
 
 
 # Orchestrate jobs using workflows
