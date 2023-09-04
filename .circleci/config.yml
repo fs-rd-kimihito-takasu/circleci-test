@@ -22,9 +22,11 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: "Say hello"
-          command: "ls file.txt"
+          command: "ls workspace/file.txt"
   say-hello3:
     docker:
       - image: cimg/base:stable
@@ -32,8 +34,11 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "touch file.txt"
-
+          command: "touch workspace/file.txt"
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - file.txt
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
