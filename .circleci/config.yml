@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, Japan!"
+          command: "ls file.txt"
   say-hello3:
     docker:
       - image: cimg/base:stable
@@ -32,7 +32,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "exit 255"
+          command: "touch file.txt"
 
 
 # Orchestrate jobs using workflows
