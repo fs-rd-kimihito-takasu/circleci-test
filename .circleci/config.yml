@@ -26,7 +26,7 @@ jobs:
           at: /tmp/workspace
       - run:
           name: "Say hello"
-          command: "ls workspace/file.txt"
+          command: "ls /tmp/workspace/file.txt"
   say-hello3:
     docker:
       - image: cimg/base:stable
